@@ -20,8 +20,9 @@ export class AddNew extends React.Component {
             name,
             lastName,
             age
-        }).then(() => {
-            this.props.history.push("/")
+        }).then((docRef) => {
+            console.log("User added!");
+            this.props.history.push("/detail/" + docRef.id);
           })
           .catch((error) => {
               console.log("Error writing document:" + error)

@@ -7,6 +7,7 @@ import { Main } from "./components/Main";
 import { AddNew } from "./components/AddNew";
 import { Navmenu } from "./components/Navmenu";
 import { Detail } from "./components/Detail";
+import { Edit } from "./components/Edit";
 
 
 
@@ -22,6 +23,7 @@ class App extends React.Component {
                     <Route exact path="/" component = {Main} />
                     <Route path="/addnew/" component = {AddNew} />
                     <Route path="/detail/:key" component = {Detail} />
+                    <Route path="/edit/:key" component = {Edit} />
 
                 </Router>
             </div>

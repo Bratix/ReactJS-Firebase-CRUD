@@ -48,7 +48,7 @@ export class Main extends React.Component {
                 {this.state.users.map((user,i) => 
                     <div className="container" key={user.key}>
                         <div className="row">
-                            <div className="col-3">
+                            <div className="col-6">
                             <h2>Name:  {user.name}</h2>
                             <h3>Last name:{user.lastName}</h3>
                             <h3>Age: {user.age}</h3> 
