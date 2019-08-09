@@ -1,35 +1,31 @@
 import React from "react";
 import { render } from "react-dom";
-import firebase from "firebase";
-import config from "./config"
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 
 import { Main } from "./components/Main";
+import { AddNew } from "./components/AddNew";
+import { Navmenu } from "./components/Navmenu";
+import { Detail } from "./components/Detail";
+
+
 
 class App extends React.Component {
 
-    constructor(){
-        super();
-    }
-    
-      
-
     render() {
-        var users = firebase.firestore().collection('users');
-        
-        users.get().then(snapshot => {
-
-            snapshot.forEach(doc => {
-          
-              console.log( doc.data().name );    
-              console.log( doc.data().lastName );
-              console.log( doc.data().age );
-          
-            });
-        });
-
         return(
-            <h1>Amar</h1>
-        );
+            <div>
+                <Router>
+
+                    <Navmenu/>
+
+                    <Route exact path="/" component = {Main} />
+                    <Route path="/addnew/" component = {AddNew} />
+                    <Route path="/detail/:key" component = {Detail} />
+
+                </Router>
+            </div>
+        )
     }
     
 }
